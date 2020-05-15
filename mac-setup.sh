@@ -19,7 +19,7 @@ echo ""
 
 echo "Installing python 3 .."
 brew install python3
-echo "Python 3 version is: "
+echo ">> Python 3 version is: "
 python3 --version
 pip3 install pandas jupyter
 echo ".. Done"
@@ -52,4 +52,19 @@ echo ".. Done"
 
 echo ""
 
-echo ""End of Mac setup""
+echo "Installing poetry .."
+# bash /Applications/Python\ 3.7/Install\ Certificates.command # to be run if issues with curl ssl
+curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py|python
+source .bash_profile
+echo ">> Poetry version:"
+poetry --version
+echo ""
+poetry config virtualenvs.in-project true
+echo ">> Poetry configuration:"
+poetry config --list
+echo ""
+echo "..Done"
+
+echo ""
+
+echo "End of Mac setup"
