@@ -21,7 +21,7 @@ echo "Installing python 3 .."
 brew install python3
 echo ">> Python 3 version is: "
 python3 --version
-pip3 install pandas jupyter
+pip3 install pandas
 echo ".. Done"
 
 echo ""
