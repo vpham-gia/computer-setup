@@ -13,6 +13,7 @@ echo "alias ll='ls -la'" >> .bash_aliases
 echo "alias python='python3'" >> .bash_aliases
 touch .bash_profile
 echo "source ~/.bash_aliases" >> .bash_profile
+echo "export LC_ALL=en_US.UTF-8" >> .bash_profile
 echo ".. Done"
 
 echo ""
