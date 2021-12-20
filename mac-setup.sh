@@ -28,7 +28,7 @@ echo ".. Done"
 echo ""
 
 echo "Installing iterm2 .."
-brew cask install iterm2
+brew install --cask iterm2
 echo ".. Done"
 
 echo ""
@@ -36,8 +36,8 @@ echo ""
 echo "Installing zsh and configuring iterm .."
 brew install zsh
 chsh -s /bin/zsh
-brew tap caskroom/fonts
-brew cask install font-hack-nerd-font
+brew tap homebrew/cask-fonts
+brew install --cask font-hack-nerd-font
 echo "source ~/.bash_profile" >> ~/.zshrc
 echo "" >> ~/.zshrc
 echo "POWERLEVEL9K_MODE='nerdfont-complete'" >> ~/.zshrc
@@ -67,5 +67,12 @@ echo ""
 echo "..Done"
 
 echo ""
+
+echo "Installing pyenv .."
+brew install pyenv
+echo "..Done"
+
+echo ""
+
 
 echo "End of Mac setup"
