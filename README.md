@@ -10,6 +10,7 @@ To finalize the setup, several manual configurations must be done:
 * Set iTerm2 > Preferences > Profiles > Text > Font > Non-ASCII Font to "Hack Nerd Font"
 * Set iTerm2 > Preferences > Profiles > Colors > Color Presets to "SeaShells" (after import)
 * Set up custom shortcuts
+
 ![custom_shortcuts](./screenshots/mac-custom-shortcuts.png)
 * Import PyCharm settings
 
