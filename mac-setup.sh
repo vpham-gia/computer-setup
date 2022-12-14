@@ -11,6 +11,8 @@ cd ~/
 touch .bash_aliases
 echo "alias ll='ls -la'" >> .bash_aliases
 echo "alias python='python3'" >> .bash_aliases
+echo "" >> .bash_aliases
+echo "alias projects_code='cd ~'" >> .bash_aliases
 touch .bash_profile
 echo "source ~/.bash_aliases" >> .bash_profile
 echo "export LC_ALL=en_US.UTF-8" >> .bash_profile
@@ -64,15 +66,18 @@ poetry config virtualenvs.in-project true
 echo ">> Poetry configuration:"
 poetry config --list
 echo ""
+echo "" >> .bash_profile
+echo "export PATH='$HOME/.poetry/bin:$PATH'" >> .bash_profile
 echo "..Done"
 
 echo ""
 
 echo "Installing pyenv .."
 brew install pyenv
+echo "" >> .bash_profile
+echo "eval '$(pyenv init --path)'" >> .bash_profile
 echo "..Done"
 
 echo ""
-
 
 echo "End of Mac setup"
