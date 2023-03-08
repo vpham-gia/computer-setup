@@ -1,10 +1,16 @@
 echo "Initialization of Mac setup"
-echo ""
+echo "-----------------------------------------------------"
+
+echo "Installing Xcode Command Line Tools .."
+xcode-select --install
+echo ".. Done"
+echo "-----------------------------------------------------"
+
 echo "Installing Homebrew .."
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 echo ".. Done"
 
-echo ""
+echo "-----------------------------------------------------"
 
 echo "Creating .bash_profile and .bash_aliases .."
 cd ~/
@@ -18,7 +24,7 @@ echo "source ~/.bash_aliases" >> .bash_profile
 echo "export LC_ALL=en_US.UTF-8" >> .bash_profile
 echo ".. Done"
 
-echo ""
+echo "-----------------------------------------------------"
 
 echo "Installing python 3 .."
 brew install python3
@@ -27,13 +33,13 @@ python3 --version
 pip3 install pandas
 echo ".. Done"
 
-echo ""
+echo "-----------------------------------------------------"
 
 echo "Installing iterm2 .."
 brew install --cask iterm2
 echo ".. Done"
 
-echo ""
+echo "-----------------------------------------------------"
 
 echo "Installing zsh and configuring iterm .."
 brew install zsh
@@ -50,10 +56,10 @@ git clone https://github.com/bhilburn/powerlevel9k.git ~/powerlevel9k
 echo 'source  ~/powerlevel9k/powerlevel9k.zsh-theme' >> ~/.zshrc
 echo "" >> ~/.zshrc
 brew install zsh-syntax-highlighting
-echo "source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
+echo 'source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' >> ~/.zshrc
 echo ".. Done"
 
-echo ""
+echo "-----------------------------------------------------"
 
 echo "Installing poetry .."
 # bash /Applications/Python\ 3.7/Install\ Certificates.command # to be run if issues with curl ssl
@@ -61,16 +67,16 @@ curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poet
 source .bash_profile
 echo ">> Poetry version:"
 poetry --version
-echo ""
+echo "-----------------------------------------------------"
 poetry config virtualenvs.in-project true
 echo ">> Poetry configuration:"
 poetry config --list
-echo ""
+echo "-----------------------------------------------------"
 echo "" >> .bash_profile
 echo 'export PATH="$HOME/.poetry/bin:$PATH"' >> .bash_profile
 echo "..Done"
 
-echo ""
+echo "-----------------------------------------------------"
 
 echo "Installing pyenv .."
 brew install pyenv
@@ -78,6 +84,6 @@ echo "" >> .bash_profile
 echo 'eval "$(pyenv init --path)"' >> .bash_profile
 echo "..Done"
 
-echo ""
+echo "-----------------------------------------------------"
 
 echo "End of Mac setup"
