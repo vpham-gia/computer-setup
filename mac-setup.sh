@@ -62,8 +62,7 @@ echo ".. Done"
 echo "-----------------------------------------------------"
 
 echo "Installing poetry .."
-# bash /Applications/Python\ 3.7/Install\ Certificates.command # to be run if issues with curl ssl
-curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py|python
+brew install poetry
 source .bash_profile
 echo ">> Poetry version:"
 poetry --version
